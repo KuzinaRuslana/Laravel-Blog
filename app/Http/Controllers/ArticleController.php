@@ -40,4 +40,24 @@ class ArticleController extends Controller
         return redirect()
             ->route('articles.index');
     }
+
+    public function edit($id)
+    {
+        $article = Article::findOrFail($id);
+        return view('article.edit', compact('article'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $article = Article::findOrFail($id);
+        $data = $request->validate([
+            'name' => "required|unique:articles,name,{$article->id}",
+            'body' => 'required|min:10',
+        ]);
+
+        $article->fill($data);
+        $article->save();
+        return redirect()
+            ->route('articles.index');
+    }
 }
