@@ -10,9 +10,4 @@ class PageController extends Controller
     {
         return view('page.about');
     }
-
-    public function team()
-    {
-        return view('page.team');
-    }
 }

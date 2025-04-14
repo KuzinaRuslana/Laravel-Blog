@@ -1,14 +1,8 @@
-@if ($errors->any())
-    <div>
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-@endif
+@extends('layouts.app')
 
+@section('content')
 {{ html()->modelForm($article, 'POST', route('articles.store'))->open() }}
     @include('article.form')
     {{ html()->submit('Создать') }}
 {{ html()->closeModelForm() }}
+@endsection
