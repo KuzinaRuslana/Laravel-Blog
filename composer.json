@@ -10,7 +10,8 @@
         "laravel/framework": "^11.31",
         "laravel/tinker": "^2.9",
         "spatie/laravel-flash": "^1.10",
-        "spatie/laravel-html": "^3.11"
+        "spatie/laravel-html": "^3.11",
+        "spatie/laravel-query-builder": "^6.3"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",

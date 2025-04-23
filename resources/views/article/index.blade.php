@@ -2,7 +2,23 @@
 
 @section('content')
     <h1>Список статей</h1>
-    <a href="{{ route('articles.create') }}" class="btn btn-primary mb-3">Добавить статью</a>
+    
+    <div class="form">
+        {{ html()->form('GET', route('articles.index'))->open() }}
+            <div class="form-group">
+                {{ html()->text('filter[name]', request('filter.name'))
+                    ->placeholder('Введите название')
+                    ->class('form-control') }}
+            </div>
+
+            <button type="submit" class="btn btn-primary mt-2">Поиск</button>
+        {{ html()->form()->close() }}
+    </div>
+
+    <div class="d-flex justify-content-end mb-3">
+        <a href="{{ route('articles.create') }}" class="btn btn-primary">Добавить статью</a>
+    </div>
+
     <table class="table">
         <thead>
             <tr>

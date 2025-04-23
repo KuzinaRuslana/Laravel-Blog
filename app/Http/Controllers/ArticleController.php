@@ -4,12 +4,18 @@ namespace App\Http\Controllers;
 
 use App\Models\Article;
 use Illuminate\Http\Request;
+use Spatie\QueryBuilder\QueryBuilder;
+use Spatie\QueryBuilder\AllowedFilter;
 
 class ArticleController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $articles = Article::paginate();
+        $articles = QueryBuilder::for(Article::class)
+        ->allowedFilters([
+            AllowedFilter::partial('name'),
+        ])
+        ->paginate(10);
 
         return view('article.index', compact('articles'));
     }
