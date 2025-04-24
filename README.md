@@ -1,4 +1,4 @@
-### About
+### About Blog
 This private Laravel blog will keep your thoughts and opinions as long as you wish.
 
 ### Requirements
