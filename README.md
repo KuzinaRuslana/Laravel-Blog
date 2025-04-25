@@ -13,11 +13,11 @@ git clone https://github.com/KuzinaRuslana/Laravel-Blog.git
 cd Laravel-Blog
 make install
 ```
-2. Create .env file:
+2. Create `.env` file:
 ```bash
 cp .env.example .env
 ```
-3. Create .sqlite file to use SQLite:
+3. Create `.sqlite` file to use SQLite:
 ```bash
 touch database/database.sqlite
 ```
